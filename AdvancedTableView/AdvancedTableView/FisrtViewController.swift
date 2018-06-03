@@ -24,6 +24,7 @@ final class FisrtViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
       
+        
       self.tableViewCreation()
     }
   //MARK:-
@@ -43,6 +44,13 @@ final class FisrtViewController: UIViewController {
       self.firstTabelView?.reloadData()
     }
   }
-
-  
 }
+
+
+//Tableview Implementation
+extension FisrtViewController : UITableViewDelegate {
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    self.performSegue(withIdentifier: "check", sender: self)
+  }
+}
+
